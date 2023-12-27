@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이도희</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+        const content = "BACKEND\nDEVELOPER";
+        const text = document.querySelector(".header_text_top");
+        let index = 0;
+        let typingInterval;
+
+        function sleep(delay) {
+        const start = new Date().getTime();
+        while (new Date().getTime() < start + delay);
+        }
+
+        function typing() {
+        text.textContent += content[index++];
+            if (index >= content.length) {
+                clearInterval(typingInterval); 
+            }
+        }
+
+        typingInterval = setInterval(typing, 200);
+
+
+        $('.nav_box a').click(function(){
+            event.preventDefault(); 
+
+            let href = $(this).attr('href');
+
+            $('html, body').animate({
+                scrollTop: $(href).offset().top
+            }, 300)
+        })
+
+
+        $(window).scroll(function(){
+            if ($('.main2_skill').offset().top <= $(window).scrollTop()) {
+                
+                // 게이지 바 올라가는 부분
+                $('.bar_input').each(function () {
+                    
+
+
+                });
+
+                
+
+                // 숫자 올라가는 부분
+                $('.bar_percent').each(function () {
+                    const $this = $(this),
+                        countTo = $this.attr('data-count');
+
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                        countNum: countTo
+                    }, {
+                        duration: 1000,
+                        easing: 'linear',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+                    });
+                });
+            }
+        });
+
+
+       
+
+        $('.mario_link_box a').mouseenter(function() {
+            $(this).animate ({
+                top: '-=5px'
+            }, 100).animate ({
+                top: '+=5px'
+            }, 100)
+        })
+    });
+</script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header" id="header">
+            <div class="header_L">
+                <div class="header_text_box">
+                    <div class="header_L_top">
+                        <p class="header_text_top"></p>
+                    </div>
+                    <div class="header_L_btm">
+                        <p class="header_text_btm">LeeDoHee<br>portfolio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header_R"></div>
+        </div>
+        <div class="mainContent">
+            <div class="main main1_aboutMe" id="main1_aboutMe">
+                <div class="about_top"></div>
+                <div class="about_txt">
+                    About Me!
+                </div>
+                <div class="main_box">
+                    <div class="aboutMe_box">
+                        <div class="aboutMe_L">
+                            <div class="aboutMe_L_outer">
+                                <div class="aboutMe_img_box">
+                                    <img src="./img/portfolio/aboutMe/profile.png" alt="">
+                                </div>
+                                <!-- <p>더 나은 어플리케이션을 위해<br>끊임없이 노력하는<br>백엔드 개발자 이도희 입니다</p> -->
+                            </div>
+                        </div>
+                        <div class="aboutMe_bar"></div>
+                        <div class="aboutMe_R">
+                            <div class="aboutMe_R_outer">
+                                <div class="profile_box">
+                                    <div class="profile_L">NAME</div>
+                                    <div class="profile_R">
+                                        <p>이도희 (Lee Do Hee)</p>
+                                    </div>
+                                </div>
+                                <div class="profile_box">
+                                    <div class="profile_L">BIRTH</div>
+                                    <div class="profile_R">
+                                        <p>1999.08.03</p>
+                                    </div>
+                                </div>
+                                <div class="profile_box">
+                                    <div class="profile_L">EDUCATION</div>
+                                    <div class="profile_R">
+                                        <p>2015.03 ~ 2018.02</p>
+                                        <p>월계고등학교 졸업</p>
+                                        <p>2018.03 ~ 2024.02</p>
+                                        <p>경동대학교 컴퓨터공학과 졸업 예정</p>
+                                        <p>2023.07 ~ 2023.12</p>
+                                        <p>디지털컨버스자바개발자 수료</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main main2_skill" id="main2_skill">
+                <div class="skill_txt">
+                    Skills
+                </div>
+                <div class="main_box">
+                    <div class="skill_box">
+                        <ul>
+                            <li>
+                                <img src="./img/portfolio/skill/html.png" alt="">
+                                <div class="bar_box">
+                                    <div class="bar_outer bar_outer_html">
+                                        <div class="bar_input bar_input_html" data-count="95"></div>
+                                    </div>
+                                    <p class="bar_title">
+                                        HTML5
+                                    </p>
+                                </div>
+                                <div class="bar_percent_box">
+                                    <span class="bar_percent bar_percent_html" data-count="95">0</span>
+                                    <span class="bar_percent_html">%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/portfolio/skill/css.png" alt="">
+                                <div class="bar_box">
+                                    <div class="bar_outer bar_outer_css">
+                                        <div class="bar_input bar_input_css"></div>
+                                    </div>
+                                    <p class="bar_title">
+                                        CSS3
+                                    </p>
+                                </div>
+                                <div class="bar_percent_box">
+                                    <span class="bar_percent bar_percent_css" data-count="80">0</span>
+                                    <span class="bar_percent_css">%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/portfolio/skill/js.png" alt="">
+                                <div class="bar_box">
+                                    <div class="bar_outer bar_outer_js">
+                                        <div class="bar_input bar_input_js"></div>
+                                    </div>
+                                    <p class="bar_title">
+                                        Javascript
+                                    </p>
+                                </div>
+                                <div class="bar_percent_box">
+                                    <span class="bar_percent bar_percent_js" data-count="80">0</span>
+                                    <span class="bar_percent_js">%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/portfolio/skill/java.png" alt="">
+                                <div class="bar_box">
+                                    <div class="bar_outer bar_outer_java">
+                                        <div class="bar_input bar_input_java"></div>
+                                    </div>
+                                    <p class="bar_title">
+                                        Java
+                                    </p>
+                                </div>
+                                <div class="bar_percent_box">
+                                    <span class="bar_percent bar_percent_java" data-count="80">0</span>
+                                    <span class="bar_percent_java">%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/portfolio/skill/spring.png" alt="">
+                                <div class="bar_box">
+                                    <div class="bar_outer bar_outer_spring">
+                                        <div class="bar_input bar_input_spring"></div>
+                                    </div>
+                                    <p class="bar_title">
+                                        Spring
+                                    </p>
+                                </div>
+                                <div class="bar_percent_box">
+                                    <span class="bar_percent bar_percent_spring" data-count="80">0</span>
+                                    <span class="bar_percent_spring">%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/portfolio/skill/mysql.png" alt="">
+                                <div class="bar_box">
+                                    <div class="bar_outer bar_outer_sql">
+                                        <div class="bar_input bar_input_sql"></div>
+                                    </div>
+                                    <p class="bar_title">
+                                        MySql
+                                    </p>
+                                </div>
+                                <div class="bar_percent_box">
+                                    <span class="bar_percent bar_percent_sql" data-count="75">0</span>
+                                    <span class="bar_percent_sql">%</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="used">
+                        <div class="used_txt">Used it!</div>
+                        <div class="used_item">
+                            <span><img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt=""></span>
+                            <span><img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill_btm"></div>
+            </div>
+            <div class="project_title">
+                PROJECTS
+            </div>
+            <div class="main main3_portfolio1" id="main3_portfolio1">
+                <div class="main_txt Focho_title">
+                    1. Focho
+                </div>
+                <div class="main_box">
+                    <div class="project_box">
+                        <div class="txt_L">
+                            <div class="main_txt_box focho_txt_box">
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_focho">Viewport</div>
+                                    <div class="main_view_box">
+                                        <p>반응형</p>
+                                    </div>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_focho">Skills</div>
+                                    <div class="main_skile_box">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JS</span>
+                                        <span>Java</span>
+                                        <span>MySql</span>
+                                    </div>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_focho">Main Color</div>
+                                    <div class="main_cir_box">
+                                        <div class="color_cir focho_color1"></div>
+                                        <div class="color_cir focho_color2"></div>
+                                    </div>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_focho">Description</div>
+                                    <p>강남의 식당을 소개하고 추천하는 프로젝트입니다.</p>
+                                    <br>
+                                    <p>SPRING, MYSQL을 사용하여 DB 정보를 불러오는 방식으로 작업하였습니다.</p>
+                                    <!-- <p>작업기간 2023. ~ 2023.</p>
+                                    <p>작업인원 4명</p>
+                                    <p>백엔드 - 100%</p> -->
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="link_box focho_link_box">
+                                        <a href="https://github.com/DH083/Focho"><div class="focho_link_txt github">Git</div></a>
+                                        <a href="./pdf/focho/Focho.pdf" download><div class="focho_link_txt pdf">Pdf</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img_R">
+                            <div class="img_R_box">
+                                <img src="./img/portfolio/portfolio1/desktop.png" alt="" class="img_desktop">
+                                <img src="./img/portfolio/portfolio1/ipad.png" alt="" class="img_pad">
+                                <img src="./img/portfolio/portfolio1/phone.png" alt="" class="img_phone">
+                                <img src="./img/portfolio/portfolio1/focho_banner.png" alt="" class="focho_img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main main4_portfolio2" id="main4_portfolio2">
+                <div class="main_txt Mario_title">
+                    2. Mario
+                </div>
+                <div class="main_box">
+                    <div class="project_box">
+                        <div class="txt_L">
+                            <div class="main_txt_box mario_txt_box">
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_mario">Viewport</div>
+                                    <div class="main_view_box">
+                                        <p>데스크탑</p>
+                                    </div>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_mario">Skills</div>
+                                    <div class="main_skile_box">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JS</span>
+                                    </div>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_mario">Main Color</div>
+                                    <div class="main_cir_box">
+                                        <div class="color_cir mario_color1"></div>
+                                        <div class="color_cir mario_color2"></div>
+                                    </div>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="project_txt project_txt_mario">Description</div>
+                                    <p>닌텐도 포탈 사이트의 슈퍼 마리오 페이지를 클론 코딩한 사이트 입니다.</p>
+                                </div>
+                                <div class="txt_L_box">
+                                    <div class="link_box mario_link_box">
+                                        <a href="https://github.com/DH083/Focho" class="mario_link">
+                                            <div class="mario_link_circle"></div>
+                                            <div class="mario_link_txt">호스팅</div>
+                                            <div class="mario_link_circle"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img_R">
+                            <div class="img_R_box">
+                                <img src="./img/portfolio/portfolio2/desktop.png" alt="" class="img_desktop">
+                                <img src="./img/portfolio/portfolio2/img-chara-09.png" alt="" class="img_mario_goomba">
+                                <img src="./img/portfolio/portfolio2/img-block-02.png" alt="" class="img_mario_block">
+                                <img src="./img/portfolio/portfolio2/img-chara-01.png" alt="" class="img_mario_mushroom">
+                                <img src="./img/portfolio/portfolio2/img-chara-08.png" alt="" class="img_mario_teresa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="and main5_portfolio_zip" id="main5_portfolio3">
+                <div class="main_txt and_title">
+                    AND ...
+                </div>
+                <div class="and_content_box">
+                    <a href="https://github.com/DH083/Purending">
+                        <div class="portpolol_mini_box">
+                            <div class="mini_port_title">Purending (앱)</div>
+                            <div class="mini_port_img_box">
+                                <img src="./img/portfolio/portfolio4/phone.png" alt="" class="mini_phone">
+                                <img src="./img/portfolio/portfolio4/purending.png" alt="" class="mini_purending">
+                            </div>
+                            <div class="mini_port_txt">
+                                <p>안드로이드용 스마트폰 앱으로 제작된 자기관리 어플리케이션입니다.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/DH083/Petmilier">
+                        <div class="portpolol_mini_box">
+                            <div class="mini_port_title">Petmilier (앱)</div>
+                            <div class="mini_port_img_box">
+                                <img src="./img/portfolio/portfolio4/phone.png" alt="" class="mini_phone">
+                                <img src="./img/portfolio/portfolio5/logo_brown.png" alt="" class="mini_pet1">
+                            </div>
+                            <div class="mini_port_txt">
+                                <p>안드로이드용 스마트폰 앱으로 제작된 반려동물 관리 어플리케이션입니다.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer" id="footer">
+            <div class="footer_top"></div>
+            <div class="footer_mid">
+                <div class="footer_txt">
+                    CONTACT
+                </div>
+                <div class="adress_box">
+                    <div class="footer_box">
+                        <div class="email_box">
+                            <img src="./img/portfolio/footer/mail.png" alt="">
+                        </div>
+                        <h4>ehgml1174@naver.com</h4>
+                    </div>
+                    <div class="footer_box">
+                        <div class="tel_box">
+                            <img src="./img/portfolio/footer/tel.png" alt="">
+                        </div>
+                        <h4>010.8694.8014</h4>
+                    </div>
+                    <div class="footer_box">
+                        <div class="kakao_box">
+                            <img src="./img/portfolio/footer/kakao.png" alt="">
+                        </div>
+                        <h4>ehgml1174@naver.com</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_btm"></div>
+        </div>
+        <div class="nav">
+            <div class="nav_box">
+                <a href="#header"><p>TOP</p></a>
+                <a href="#main1_aboutMe"><p>ABOUT ME</p></a>
+                <a href="#main2_skill"><p>SKILLS</p></a>
+                <a href="#main3_portfolio1"><p>FOCHO</p></a>
+                <a href="#main4_portfolio2"><p>MARIO</p></a>
+                <a href="#main5_portfolio3"><p>AND</p></a>
+                <a href="#footer"><p>CONTACT</p></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

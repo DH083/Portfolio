@@ -1,0 +1,729 @@
+body {margin: 0; padding: 0; font-family: NotoSansKR;}
+.wrap {
+    min-width: 1200px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a { 
+    text-decoration: 
+    none; 
+    color: inherit;
+}
+p {
+    margin: 0;
+}
+@font-face {
+    font-family: NotoSansKR;
+    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Black.otf');
+    font-weight: 900;
+}
+@font-face {
+    font-family: NotoSansKR;
+    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Bold.otf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: NotoSansKR;
+    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Medium.otf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: NotoSansKR;
+    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Regular.otf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: NotoSansKR;
+    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Light.otf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: NotoSansKR;
+    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Thin.otf');
+    font-weight: 100;
+}
+.portfolio_txt {
+    font-size: 50px;
+    font-weight: 800;
+    float: left;
+    transform: translateY(-100%);
+}
+.header,
+.main,
+.footer {
+    min-height: 800px;
+}
+
+/* 헤더 header */
+.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+.header_L,
+.header_R {
+    width: 50%;
+    height: 100%;
+}
+.header_text_box {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+}
+.header_L_top,
+.header_L_btm {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: flex-end;
+}
+.header_text_top {
+    font-size: 46px;
+    vertical-align: middle;
+    animation:  cursor 0.3s ease infinite;
+}
+@keyframes cursor{ 
+    0%{border-right: 1px solid #fff} 
+    50%{border-right: 1px solid #000} 
+    100%{border-right: 1px solid #fff} 
+}
+.header_text_btm {
+    font-size: 32px;
+}
+.header_R {
+    background-color: #58a96f;
+}
+
+/* 메인 mainContent */
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+.main_box {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    box-sizing: border-box;
+}
+/* 메인1 main1_aboutMe */
+.about_top {
+    width: 100%;
+    height: 20%;
+    clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
+    background-image: linear-gradient(135deg,#c9ffc4 0%,#357c1b 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.about_txt {
+    padding: 20px;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+}
+.aboutMe_box {
+    width: 100%;
+    height: 90%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+}
+.aboutMe_L,
+.aboutMe_R {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.aboutMe_L {
+    width: 35%;
+}
+.aboutMe_img_box {
+    width: 85%;
+    margin: auto;
+    padding: 40px;
+    border: 5px solid #1c5507;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.aboutMe_img_box img {
+    width: 100%;
+}
+.aboutMe_L_outer p {
+    line-height: 1.5;
+    margin: 30px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+.aboutMe_R {
+    width: 55%;
+    transform: translateY(30px);
+}
+.aboutMe_title {
+    font-size: 54px;
+    font-weight: 900;
+    color: #000;
+}
+.profile_box {
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.profile_L {
+    font-size: 18px;
+    line-height: 2;
+    background: #000;
+    padding: 0 10px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.profile_R {
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* 메인2 main2_skill */
+.skill_txt {
+    width: 90%;
+    padding: 20px;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    color: #000;
+}
+.skill_box {
+    background-color: #fff;
+    width: 90%;
+    height: 80%;
+    border-radius: 25px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 5px 8px #444;
+}
+.skill_box ul {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.skill_box li {
+    display: flex;
+    width: 50%;
+    height: calc(100% / 4);
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.skill_box li img {
+    height: 100%;
+}
+.bar_box {
+    width: 50%;
+    height: 100%;
+    margin-right: 25px;
+}
+.bar_outer {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+}
+.bar_input {
+    height: 100%;
+}
+.bar_title {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 10px;
+}
+.bar_percent_box {
+    width: 15%;
+    height: 100%;
+    display: flex;
+}
+.bar_percent_box span {
+    height: 100%;
+    font-size: 40px;
+    font-weight: 800;
+    box-sizing: border-box;
+}
+.bar_outer_html {
+    background-color: #ffb494;
+}
+.bar_input_html {
+    width: 95%;
+    background-color: #f16529;
+}
+.bar_percent_html {
+    color: #f16529;
+}
+.bar_outer_css {
+    background-color: #98e0ff;
+}
+.bar_input_css {
+    width: 90%;
+    background-color: #037ed0;
+}
+.bar_percent_css {
+    color: #037ed0;
+}
+.bar_outer_js {
+    background-color: #ffef7b;
+}
+.bar_input_js {
+    width: 80%;
+    background-color: #ffc632;
+}
+.bar_percent_js {
+    color: #f6b200;
+}
+.bar_outer_java {
+    background-color: #ffa3a4;
+}
+.bar_input_java {
+    width: 80%;
+    background-color: #ca3132;
+}
+.bar_percent_java {
+    color: #ca3132;
+}
+.bar_outer_spring {
+    background-color: #a5e455;
+}
+.bar_input_spring {
+    width: 80%;
+    background-color: #61a40c;
+}
+.bar_percent_spring {
+    color: #61a40c;
+}
+.bar_outer_sql {
+    background-color: #cde0e8;
+}
+.bar_input_sql {
+    width: 75%;
+    background-color: #00608c;
+}
+.bar_percent_sql {
+    color: #00608c;
+}
+.used {
+    width: 90%;
+    box-sizing: border-box;
+}
+.used_txt {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.used_item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.used_item span {
+    height: 30px;
+}
+.skill_btm {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    clip-path: polygon(0 15vh,100% 0,100% 100%,0 100%);
+    background-image: linear-gradient(135deg,#02aab0 0%,#00cdac 100%);
+}
+/* portfolio */
+.project_title {
+    padding: 20px;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    color: #000;
+}
+.main_txt {
+    padding: 30px 10px;
+    font-size: 35px;
+    font-weight: 900;
+}
+.project_box {
+    display: flex;
+    height: 100%;
+}
+.txt_L {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.main_txt_box {
+    width: 80%;
+    height: 100%;
+    padding: 5px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.txt_L_box {
+    margin: 20px 0;
+}
+.project_txt {
+    margin: 5px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.txt_L_box p {
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.main_skile_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.main_skile_box span {
+    border: 1px solid;
+    box-sizing: border-box;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 10px 5px;
+}
+.main_skile_box span:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.main_cir_box {
+    display: flex;
+}
+.color_cir {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px #555;
+}
+.link_box a {
+    width: 100px;
+    line-height: 40px;
+    margin: 10px 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid;
+    box-shadow: 0px 1px 1px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.img_R {
+    width: 50%;
+}
+.img_R_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.img_desktop {
+    width: 600px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.img_pad {
+    width: 350px;
+    position: absolute;
+    top: 250px;
+    right: 400px;
+}
+.img_phone {
+    width: 100px;
+    position: absolute;
+    top: 420px;
+    right: 400px;
+}
+/* 메인3 main3_portfolio1 Focho */
+.main3_portfolio1 {
+    background-color: #d0fffc;
+}
+.Focho_title,
+.project_txt_focho {
+    color: #02aab0;
+}
+.focho_color1 {    
+    background-color: #5cfff5;
+}
+.focho_color2 {    
+    background-color: #f2f4f9;
+}
+.focho_link_box a {
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+}
+.focho_link_txt {
+    position: relative;
+}
+.focho_link_box a::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #02aab0;
+    position: absolute;
+    top: 0;
+    transition: all .5s
+}
+.focho_link_txt:hover {
+    color: #fff;
+}
+.focho_link_box a:hover::before {
+    width: 100%
+}
+.focho_img {
+    width: 400px;
+    position: absolute;
+    top: 500px;
+    right: -20%;
+}
+
+/* 메인4 main4_portfolio2 */
+.main4_portfolio2 {
+    background: url(../img/portfolio/portfolio2/bg-01-sp.png) repeat red;
+}
+.Mario_title {
+    color: #fff;
+}
+.project_txt_mario {
+    color: #5c1801;
+}
+.mario_color1 {    
+    background-color: #ff0000;
+}
+.mario_color2 {    
+    background-color: #f2f4f9;
+}
+.mario_link_box a {
+    line-height: 34px;
+    padding: 3px;
+    background-color: #ffd200;
+    color: #5c1801;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.mario_link_circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mario_link_circle::before, .mario_link_circle::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #f08100;
+    border-top: 1px solid #5c1801;
+    border-left: 1px solid #5c1801;
+    border-radius: 50%;
+}
+.mario_link_box a:hover {
+    color: #fff;
+    background-color: #ac4605;
+    cursor: pointer;
+}
+.mario_link_box a:hover .mario_link_circle::before,
+.mario_link_box a:hover .mario_link_circle::after {
+    background-color: #743208;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+.img_mario_goomba {
+    width: 54px;
+    position: absolute;
+    top: -53px;
+    right: 90px;
+}
+.img_mario_block {
+    width: 200px;
+    position: absolute;
+    top: 300px;
+    right: -25px;
+}
+.img_mario_mushroom {
+    width: 70px;
+    position: absolute;
+    top: 230px;
+    right: 66px;
+}
+.img_mario_teresa {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 556px;
+    
+}
+/* 메인5 main5_portfolio_zip */
+.and {
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+.and_title {
+    text-align: center;
+}
+.and_content_box {
+    margin: 50px 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.portpolol_mini_box {
+    width: 300px;
+    border: 1px solid #cecece;
+    box-shadow: 3px 3px 3px #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.mini_port_title {
+    font-size: 24px;
+    font-weight: 900;
+}
+.mini_port_img_box {
+    width: 100%;
+    height: 180px;
+    margin: 20px 0;
+    position: relative;
+    transition: 0.2s;
+}
+.mini_phone {
+    height: 100%;
+    position: absolute;
+    left: 60px;
+}
+.mini_pet1, .mini_purending {
+    width: 100px;
+    position: absolute;
+    bottom: -20px;
+    left: 120px;
+}
+.mini_port_txt {
+    text-align: center;
+}
+.portpolol_mini_box:hover .mini_port_img_box {
+    transform: scale(1.1);
+}
+/* 푸터 footer */
+.footer {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+
+}
+.footer_top {
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+}
+.footer_mid {
+    width: 100%;
+    height: 70vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    clip-path: polygon(0 15vh,100% 0,100% 100%,0 100%);
+    color: #fff;
+    background-image: linear-gradient(135deg,#02aab0 0%,#00cdac 100%);
+
+}
+.footer_txt {
+    padding-top: 10%;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+}
+.adress_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footer_box {
+    margin: 30px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 3px 5px 5px;
+    transition: 0.2s;
+}
+.footer_box div {
+    width: 200px;
+}
+.footer_box img {
+    width: 70%;
+}
+.footer_box:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.footer_btm {
+    width: 100%;
+    height: 20vh;
+    background-color: #000;
+}
+
+/* 네비 nav */
+.nav {
+    position: fixed;
+    top: 5%;
+    right: 1%;
+    z-index: 999999;
+    text-align: right;
+}
+.nav_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+.nav a {
+    font-size: 22px;
+    background-color: #fff;
+    border: 3px solid #1c5507;
+    padding: 3px 8px;
+    font-weight: 700;
+    color: #1c5507;
+}
+.nav a:hover {
+    background-color: #ddd;
+}
+
+
