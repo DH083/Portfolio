@@ -15,36 +15,6 @@ a {
 p {
     margin: 0;
 }
-@font-face {
-    font-family: NotoSansKR;
-    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Black.otf');
-    font-weight: 900;
-}
-@font-face {
-    font-family: NotoSansKR;
-    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Bold.otf');
-    font-weight: 700;
-}
-@font-face {
-    font-family: NotoSansKR;
-    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Medium.otf');
-    font-weight: 500;
-}
-@font-face {
-    font-family: NotoSansKR;
-    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Regular.otf');
-    font-weight: 400;
-}
-@font-face {
-    font-family: NotoSansKR;
-    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Light.otf');
-    font-weight: 300;
-}
-@font-face {
-    font-family: NotoSansKR;
-    src: url('../fonts/Noto_Sans_KR/NotoSansKR-Thin.otf');
-    font-weight: 100;
-}
 .portfolio_txt {
     font-size: 50px;
     font-weight: 800;
@@ -244,6 +214,7 @@ p {
     margin-top: 20px;
 }
 .bar_input {
+    width: 0;
     height: 100%;
 }
 .bar_title {
@@ -266,7 +237,6 @@ p {
     background-color: #ffb494;
 }
 .bar_input_html {
-    width: 95%;
     background-color: #f16529;
 }
 .bar_percent_html {
@@ -276,7 +246,6 @@ p {
     background-color: #98e0ff;
 }
 .bar_input_css {
-    width: 90%;
     background-color: #037ed0;
 }
 .bar_percent_css {
@@ -286,7 +255,6 @@ p {
     background-color: #ffef7b;
 }
 .bar_input_js {
-    width: 80%;
     background-color: #ffc632;
 }
 .bar_percent_js {
@@ -296,7 +264,6 @@ p {
     background-color: #ffa3a4;
 }
 .bar_input_java {
-    width: 80%;
     background-color: #ca3132;
 }
 .bar_percent_java {
@@ -306,7 +273,6 @@ p {
     background-color: #a5e455;
 }
 .bar_input_spring {
-    width: 80%;
     background-color: #61a40c;
 }
 .bar_percent_spring {
@@ -316,7 +282,6 @@ p {
     background-color: #cde0e8;
 }
 .bar_input_sql {
-    width: 75%;
     background-color: #00608c;
 }
 .bar_percent_sql {
