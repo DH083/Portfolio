@@ -39,20 +39,35 @@
         })
 
 
-        $(window).scroll(function(){
-            if ($('.main2_skill').offset().top <= $(window).scrollTop()) {
-                
+        // 변수 설정
+        let animationStarted = false;
+
+        $(window).scroll(function() {
+            if ($('.main2_skill').offset().top <= $(window).scrollTop() && !animationStarted) {
+                animationStarted = true;
+
                 // 게이지 바 올라가는 부분
-                $('.bar_input').each(function () {
-                    
-
-
+                $('.bar_input').each(function() {
+                    const $this = $(this),
+                        countData = $this.attr('data-width');
+                    $({
+                        countWidth: $this.width()
+                    }).animate({
+                        countWidth: countData
+                    }, {
+                        duration: 1000,
+                        easing: 'linear',
+                        step: function() {
+                        $this.width(this.countWidth + '%');
+                        },
+                        complete: function() {
+                        $this.width(this.countWidth + '%');
+                        }
+                    });
                 });
 
-                
-
                 // 숫자 올라가는 부분
-                $('.bar_percent').each(function () {
+                $('.bar_percent').each(function() {
                     const $this = $(this),
                         countTo = $this.attr('data-count');
 
@@ -61,13 +76,13 @@
                     }).animate({
                         countNum: countTo
                     }, {
-                        duration: 1000,
+                        duration: 800,
                         easing: 'linear',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
+                        step: function() {
+                        $this.text(Math.floor(this.countNum));
                         },
-                        complete: function () {
-                            $this.text(this.countNum);
+                        complete: function() {
+                        $this.text(this.countNum);
                         }
                     });
                 });
@@ -160,7 +175,7 @@
                                 <img src="./img/portfolio/skill/html.png" alt="">
                                 <div class="bar_box">
                                     <div class="bar_outer bar_outer_html">
-                                        <div class="bar_input bar_input_html" data-count="95"></div>
+                                        <div class="bar_input bar_input_html" data-width="95"></div>
                                     </div>
                                     <p class="bar_title">
                                         HTML5
@@ -175,7 +190,7 @@
                                 <img src="./img/portfolio/skill/css.png" alt="">
                                 <div class="bar_box">
                                     <div class="bar_outer bar_outer_css">
-                                        <div class="bar_input bar_input_css"></div>
+                                        <div class="bar_input bar_input_css" data-width="80"></div>
                                     </div>
                                     <p class="bar_title">
                                         CSS3
@@ -190,7 +205,7 @@
                                 <img src="./img/portfolio/skill/js.png" alt="">
                                 <div class="bar_box">
                                     <div class="bar_outer bar_outer_js">
-                                        <div class="bar_input bar_input_js"></div>
+                                        <div class="bar_input bar_input_js" data-width="80"></div>
                                     </div>
                                     <p class="bar_title">
                                         Javascript
@@ -205,7 +220,7 @@
                                 <img src="./img/portfolio/skill/java.png" alt="">
                                 <div class="bar_box">
                                     <div class="bar_outer bar_outer_java">
-                                        <div class="bar_input bar_input_java"></div>
+                                        <div class="bar_input bar_input_java" data-width="80"></div>
                                     </div>
                                     <p class="bar_title">
                                         Java
@@ -220,7 +235,7 @@
                                 <img src="./img/portfolio/skill/spring.png" alt="">
                                 <div class="bar_box">
                                     <div class="bar_outer bar_outer_spring">
-                                        <div class="bar_input bar_input_spring"></div>
+                                        <div class="bar_input bar_input_spring" data-width="80"></div>
                                     </div>
                                     <p class="bar_title">
                                         Spring
@@ -235,7 +250,7 @@
                                 <img src="./img/portfolio/skill/mysql.png" alt="">
                                 <div class="bar_box">
                                     <div class="bar_outer bar_outer_sql">
-                                        <div class="bar_input bar_input_sql"></div>
+                                        <div class="bar_input bar_input_sql" data-width="75"></div>
                                     </div>
                                     <p class="bar_title">
                                         MySql
@@ -305,13 +320,10 @@
                                     <p>강남의 식당을 소개하고 추천하는 프로젝트입니다.</p>
                                     <br>
                                     <p>SPRING, MYSQL을 사용하여 DB 정보를 불러오는 방식으로 작업하였습니다.</p>
-                                    <!-- <p>작업기간 2023. ~ 2023.</p>
-                                    <p>작업인원 4명</p>
-                                    <p>백엔드 - 100%</p> -->
                                 </div>
                                 <div class="txt_L_box">
                                     <div class="link_box focho_link_box">
-                                        <a href="https://github.com/DH083/Focho"><div class="focho_link_txt github">Git</div></a>
+                                        <a href="https://github.com/DH083/Focho" target="_blank"><div class="focho_link_txt github">Git</div></a>
                                         <a href="./pdf/focho/Focho.pdf" download><div class="focho_link_txt pdf">Pdf</div></a>
                                     </div>
                                 </div>
@@ -363,7 +375,7 @@
                                 </div>
                                 <div class="txt_L_box">
                                     <div class="link_box mario_link_box">
-                                        <a href="https://dh083.github.io/Mario/main.html" class="mario_link">
+                                        <a href="https://dh083.github.io/Mario/main.html" class="mario_link" target="_blank">
                                             <div class="mario_link_circle"></div>
                                             <div class="mario_link_txt">호스팅</div>
                                             <div class="mario_link_circle"></div>
@@ -389,7 +401,7 @@
                     AND ...
                 </div>
                 <div class="and_content_box">
-                    <a href="https://github.com/DH083/Purending">
+                    <a href="https://github.com/DH083/Purending" target="_blank">
                         <div class="portpolol_mini_box">
                             <div class="mini_port_title">Purending (앱)</div>
                             <div class="mini_port_img_box">
@@ -401,7 +413,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://github.com/DH083/Petmilier">
+                    <a href="https://github.com/DH083/Petmilier" target="_blank">
                         <div class="portpolol_mini_box">
                             <div class="mini_port_title">Petmilier (앱)</div>
                             <div class="mini_port_img_box">
