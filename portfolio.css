@@ -1,4 +1,4 @@
-body {margin: 0; padding: 0; font-family: NotoSansKR;}
+body {margin: 0; padding: 0;}
 .wrap {
     min-width: 1200px;
 }
@@ -84,6 +84,7 @@ p {
     height: 80%;
     position: relative;
     box-sizing: border-box;
+    padding-bottom: 50px;
 }
 /* 메인1 main1_aboutMe */
 .about_top {
@@ -156,7 +157,7 @@ p {
     gap: 10px;
 }
 .profile_L {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 2;
     background: #000;
     padding: 0 10px;
@@ -164,7 +165,7 @@ p {
     box-sizing: border-box;
 }
 .profile_R {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 2;
 }
 
@@ -315,6 +316,12 @@ p {
     background-image: linear-gradient(135deg,#02aab0 0%,#00cdac 100%);
 }
 /* portfolio */
+.project_main {
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+    position: relative;
+}
 .project_title {
     padding: 20px;
     font-size: 45px;
@@ -334,8 +341,6 @@ p {
 .txt_L {
     width: 40%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
 }
 .main_txt_box {
@@ -344,19 +349,21 @@ p {
     padding: 5px 20px;
     background-color: #fff;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
 }
 .txt_L_box {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .project_txt {
     margin: 5px 0;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     color: #444;
 }
 .txt_L_box p {
     margin: 5px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
 }
 .main_skile_box {
@@ -368,7 +375,7 @@ p {
     border: 1px solid;
     box-sizing: border-box;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px 5px;
 }
 .main_skile_box span:hover {
@@ -380,8 +387,8 @@ p {
     display: flex;
 }
 .color_cir {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 5px;
     border: 1px solid #c3c3c3;
     border-radius: 50%;
@@ -389,14 +396,14 @@ p {
 }
 .link_box a {
     width: 100px;
-    line-height: 40px;
+    line-height: 45px;
     margin: 10px 5px;
     text-align: center;
     border-radius: 5px;
     border: 2px solid;
     box-shadow: 0px 1px 1px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
 }
 .img_R {
     width: 50%;
@@ -445,6 +452,9 @@ p {
 }
 .focho_link_txt {
     position: relative;
+}
+.txt_L_box_focho span {
+    color: #02aab0;
 }
 .focho_link_box a::before {
     content: "";
@@ -520,9 +530,9 @@ p {
     border-left: 1px solid #000;
 }
 .img_mario_goomba {
-    width: 54px;
+    width: 74px;
     position: absolute;
-    top: -53px;
+    top: -79px;
     right: 90px;
 }
 .img_mario_block {
@@ -542,7 +552,12 @@ p {
     position: absolute;
     top: 0;
     right: 556px;
-    
+}
+.img_mario_mario {
+    width: 150px;
+    position: absolute;
+    top: 360px;
+    right: -33px;
 }
 /* 메인5 main5_portfolio_zip */
 .and {
@@ -690,5 +705,3 @@ p {
 .nav a:hover {
     background-color: #ddd;
 }
-
-
