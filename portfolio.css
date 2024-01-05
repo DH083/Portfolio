@@ -1,4 +1,4 @@
-body {margin: 0; padding: 0;}
+body {margin: 0; padding: 0; font-family: NotoSansKR;}
 .wrap {
     min-width: 1200px;
 }
@@ -34,9 +34,8 @@ p {
     position: relative;
     display: flex;
 }
-.header_L,
-.header_R {
-    width: 50%;
+.header_L {
+    width: 100%;
     height: 100%;
 }
 .header_text_box {
@@ -50,12 +49,13 @@ p {
 .header_L_top,
 .header_L_btm {
     width: 100%;
-    height: 35%;
+    height: 50%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 .header_text_top {
-    font-size: 46px;
+    font-size: 62px;
     vertical-align: middle;
     animation:  cursor 0.3s ease infinite;
 }
@@ -65,7 +65,7 @@ p {
     100%{border-right: 1px solid #fff} 
 }
 .header_text_btm {
-    font-size: 32px;
+    font-size: 42px;
 }
 .header_R {
     background-color: #58a96f;
@@ -346,7 +346,7 @@ p {
 .main_txt_box {
     width: 80%;
     height: 100%;
-    padding: 5px 20px;
+    padding: 5px 20px 70px;
     background-color: #fff;
     border-radius: 15px;
     display: flex;
